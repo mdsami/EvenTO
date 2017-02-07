@@ -35,15 +35,57 @@
 
 
         // Adding plugin to admin menu.
-    add_action( 'admin_menu', 'evento_plugin' );
-    function evento_plugin() {
-        $menu = add_menu_page( 'EvenTO - Event ,Seminar Seat Booking System', 'EvenTO', 'read' , 'evento', 'evento_manager' );
+//    add_action( 'admin_menu', 'evento_plugin' );
+//    function evento_plugin() {
+//        $menu = add_menu_page( 'EvenTO - Event ,Seminar Seat Booking System', 'EvenTO', 'read' , 'evento', 'evento_manager' );
+//
+//
+//        // Css and javascript adding action calling.
+//        add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
+//        add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+//
+//
+//    }
 
-        // Css and javascript adding action calling.
-        add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
+	// Adding plugin to admin menu.
+	function evento_plugin(){
+		$menu = add_menu_page('EvenTO - Event ,Seminar Seat Booking System', 'EvenTO', 'manage_options', __FILE__, 'evento_plugin_page', plugins_url('/EvenTO/assets/img/icon.png',__DIR__));
+		add_submenu_page(__FILE__, 'Dashboard', 'Dashboard', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
+		add_submenu_page(__FILE__, 'Registration List', 'Registration List', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
+		add_submenu_page(__FILE__, 'Invited List', 'Invited List', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
+		add_submenu_page(__FILE__, 'Manual Invite', 'Manual Invite', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
+		add_submenu_page(__FILE__, 'Mail Setting', 'Mail Setting', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
+		add_submenu_page(__FILE__, 'SMS Setting', 'SMS Setting', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
+		add_submenu_page(__FILE__, 'Manage Sponsor', 'Manage Sponsor', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
+		add_submenu_page(__FILE__, 'About', 'About', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
+
+
+		add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
         add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
-    }
+	}
+	function evento_plugin_page(){
+		?>
+		<div class='wrap'>
+			<h2></h2>
+		</div>
+	<?php
+	}
+	function evento_plugin_custom_page(){
+		?>
+		<div class='wrap'>
+			<h2></h2>
+		</div>
+	<?php
+	}
+	function evento_plugin_about_page(){
+		?>
+		<div class='wrap'>
+			<h2></h2>
+		</div>
+	<?php
+	}
 
+	add_action('admin_menu','evento_plugin');
 
 
 	// Enqueue plugin template css files.
