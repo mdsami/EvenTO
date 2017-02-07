@@ -50,7 +50,7 @@
 	// Adding plugin to admin menu.
 	function evento_plugin(){
 		$menu = add_menu_page('EvenTO - Event ,Seminar Seat Booking System', 'EvenTO', 'manage_options', __FILE__, 'evento_plugin_page');
-		add_submenu_page(__FILE__, 'Dashboard', 'Dashboard', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
+		$submenu = add_submenu_page(__FILE__, 'Dashboard', 'Dashboard', 'manage_options', __FILE__.'/Dashboard', 'evento_manager');
 		add_submenu_page(__FILE__, 'Registration List', 'Registration List', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
 		add_submenu_page(__FILE__, 'Invited List', 'Invited List', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
 		add_submenu_page(__FILE__, 'Manual Invite', 'Manual Invite', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
@@ -62,7 +62,39 @@
 
 		add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
         add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $submenu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $submenu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $submenu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $submenu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
+
+		add_action( 'admin_print_styles-' . $menu, 'evento_add_styles' );
+		add_action( 'admin_print_scripts-' . $menu, 'evento_add_scripts' );
 	}
+
+
+
+	// Loading the main application file.
+	function evento_manager() {
+		/*
+		* Loads the main application index file here.
+		*/
+		include( EVENTO_DIR . '/view/backend/index.php' );
+	}
+
 	function evento_plugin_page(){
 		?>
 		<div class='wrap'>
