@@ -49,7 +49,7 @@
 
 	// Adding plugin to admin menu.
 	function evento_plugin(){
-		$menu = add_menu_page('EvenTO - Event ,Seminar Seat Booking System', 'EvenTO', 'manage_options', __FILE__, 'evento_plugin_page', plugins_url('/EvenTO/assets/img/icon.png',__DIR__));
+		$menu = add_menu_page('EvenTO - Event ,Seminar Seat Booking System', 'EvenTO', 'manage_options', __FILE__, 'evento_plugin_page');
 		add_submenu_page(__FILE__, 'Dashboard', 'Dashboard', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
 		add_submenu_page(__FILE__, 'Registration List', 'Registration List', 'manage_options', __FILE__.'/about', 'evento_plugin_about_page');
 		add_submenu_page(__FILE__, 'Invited List', 'Invited List', 'manage_options', __FILE__.'/custom', 'evento_plugin_custom_page');
