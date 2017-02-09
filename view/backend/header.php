@@ -1,53 +1,31 @@
+<div class="page-container"> 
+    <div class="main-content">
+        <div class="row">
+            <!-- Profile Info and Notifications -->
+            <div class="col-md-6 col-sm-8 clearfix">
+                <ul class="user-info pull-left pull-none-xsm">
+                    <!-- Profile Info -->
+                    <li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right -->
+                        <img src="<?php echo get_logo_url(); ?>" style="max-height:60px; border: 0px; float:left;" />
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <h2 style="float:left; font-weight:100;"><?php echo get_settings_info('system_name'); ?></h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
+            <!-- Raw Links -->
+            <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+                <ul class="list-inline links-list pull-right">
+                    <li>
+                        <span class="label label-info">
+                            <i class="entypo-user"></i> 
+                            <?php echo $role;?>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Admin Panel | Event Manager</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta content="" name="description" />
-        <meta content="" name="author" />
-        <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
-        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-        <!-- END GLOBAL MANDATORY STYLES -->
-        <!-- BEGIN THEME GLOBAL STYLES -->
-        <link href="assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
-        <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-        <!-- END THEME GLOBAL STYLES -->
-        <!-- BEGIN THEME LAYOUT STYLES -->
-        <link href="assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
-        <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
-
-        <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="favicon.ico" />
-
-	<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
-
-<script>
-  tinymce.init({
-    selector: '#shaons',
-	menubar: false,
-	statusbar: false,
-	automatic_uploads: true,
-	images_upload_url: 'imgup.php',
-	plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste imagetools"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code",
-  imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
-  content_css: [
-    'http://fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-    'http://www.tinymce.com/css/codepen.min.css'
-  ]
-  });
-  </script>
+<br /> </div>
+</div>
